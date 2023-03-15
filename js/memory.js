@@ -12,6 +12,7 @@ class Card {
 const myField = document.getElementById("field");
 myField.addEventListener("click", onClickCard);
 const myCardArray = ["duck", "kitten", "piglet", "puppy", "calf", "veal", "lamb", "rooster", "horse", "mouse", "dog", "cat", "goose", "goat", "sheep", "pig", "cow", "chick", "hen"];
+const doubledCardArray = myCardArray.concat(myCardArray);
 
 const myCardSet = myCardArray.map(card => new Card(card));
 document.onload = populateField();
@@ -24,7 +25,7 @@ function populateField() {
 		newTile.setAttribute("class", "board6");
 		let imageURL = "img/" + card.card1 + ".jpg";
 		newCard.setAttribute("src", imageURL);
-		newCard.setAttribute("name", card);
+		newCard.setAttribute("name", card.card1);
 		newTile.appendChild(newCard);
 		myField.appendChild(newTile);
 	});
