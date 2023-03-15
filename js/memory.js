@@ -12,10 +12,18 @@ class Card {
 const myField = document.getElementById("field");
 myField.addEventListener("click", onClickCard);
 const myCardArray = ["duck", "kitten", "piglet", "puppy", "calf", "veal", "lamb", "rooster", "horse", "mouse", "dog", "cat", "goose", "goat", "sheep", "pig", "cow", "chick", "hen"];
-const doubledCardArray = myCardArray.concat(myCardArray);
+const myDblCardArray = myCardArray.concat(myCardArray);
+const myCardSet = myDblCardArray.map((card) => new Card(card));
+shuffleArray(myCardSet);
 
-const myCardSet = myCardArray.map(card => new Card(card));
 document.onload = populateField();
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
 function populateField() {
 	myField.innerHTML = "";
