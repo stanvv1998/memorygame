@@ -9,6 +9,15 @@
 
 <body>
 
+	<h1>Memory</h1>
+
+	<select id="fieldSize" onchange="onSelectFieldSize()" required>
+	  <option value="" disabled selected>Kies een speelveld</option>
+	  <option value="4">4 x 4</option>
+	  <option value="5">5 x 5</option>
+	  <option value="6">6 x 6</option>
+	</select>
+
 <div id="field"></div>
 		
 	<script src="js/memory.js" type="module"></script>
